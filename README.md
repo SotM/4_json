@@ -32,26 +32,7 @@ $ python pprint_json.py <path to file>
                     "Hours": "09:30-22:30",
                     "DayOfWeek": "понедельник"
                 },
-                {
-                    "Hours": "09:30-22:30",
-                    "DayOfWeek": "вторник"
-                },
-                {
-                    "Hours": "09:30-22:30",
-                    "DayOfWeek": "среда"
-                },
-                {
-                    "Hours": "09:30-22:30",
-                    "DayOfWeek": "четверг"
-                },
-                {
-                    "Hours": "09:30-22:30",
-                    "DayOfWeek": "пятница"
-                },
-                {
-                    "Hours": "09:30-22:30",
-                    "DayOfWeek": "суббота"
-                },
+                ...
                 {
                     "Hours": "09:30-22:30",
                     "DayOfWeek": "воскресенье"
