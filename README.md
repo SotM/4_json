@@ -1,6 +1,6 @@
 # Prettify JSON
 
-Скрипту на вход подаётся JSON файл, а на выходе получаем читабельный формат файла.
+The script accepts a JSON as an input file and then prints a human readable format.
 
 # Quickstart
 
