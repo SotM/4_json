@@ -1,24 +1,29 @@
 import json
+import sys
+import os.path
 
 
 def load_data(filepath):
-    file_handle = open(filepath, 'r', encoding='cp1251')
-    loaded_data = file_handle.read()
-    file_handle.close()
-
-    try:
-        json_data = json.loads(loaded_data, strict=False)
-    except ValueError as err:
-        print('Error parsing JSON:', err)
-        json_data = ''
-
-    return json_data
+    with open(filepath, 'r', encoding='utf8') as file_handle:
+        loaded_data = json.loads(file_handle.read(), strict=False)
+    return loaded_data
 
 
-def pretty_print_json(input_shops_data):
-    print(json.dumps(input_shops_data, indent=4, ensure_ascii=False))
+def pretty_print_json(loaded_data):
+    print(json.dumps(loaded_data, indent=4, ensure_ascii=False))
 
 
 if __name__ == '__main__':
-    shops_data = load_data('shops.json')
-    pretty_print_json(shops_data)
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+        if os.path.exists(filename):
+            try:
+                loaded_data = load_data(filename)
+            except ValueError as err:
+                print('Error parsing JSON:', err)
+            else:
+                pretty_print_json(loaded_data)
+        else:
+            print("Error: File " + filename + " doesn't exist")
+    else:
+        print('Error: filename is not specified')
