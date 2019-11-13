@@ -2,22 +2,17 @@ import json
 
 
 def load_data(filepath):
-    # fin = open(filepath, 'r', encoding='utf8')
-    fin = open(filepath, 'r', encoding='cp1251')
-    loaded_data = fin.read()
-    fin.close()
+    file_handle = open(filepath, 'r', encoding='cp1251')
+    loaded_data = file_handle.read()
+    file_handle.close()
 
     try:
-        data = json.loads(loaded_data, strict=False)
+        json_data = json.loads(loaded_data, strict=False)
     except ValueError as err:
-        print('Error:', err)
-        data = ''
-    except:
-        data = ''
-    else:
-        print('ok')
+        print('Error parsing JSON:', err)
+        json_data = ''
 
-    return data
+    return json_data
 
 
 def pretty_print_json(data):
