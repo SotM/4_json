@@ -15,8 +15,8 @@ def load_data(filepath):
     return json_data
 
 
-def pretty_print_json(data):
-    print(json.dumps(data, indent=4, ensure_ascii=False))
+def pretty_print_json(input_shops_data):
+    print(json.dumps(input_shops_data, indent=4, ensure_ascii=False))
 
 
 if __name__ == '__main__':
